@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Just Desserts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <hr/>
+      <div class="col-md-4" style="margin:30px 0px 0px 0px">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+
+        <ul>
+          {% for message in messages %}
+          <li><strong>{{message}}</strong></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+      </div>
+      <div class="col-md-4">
+        <h1 class="text-center">Just Desserts</h1>
+      </div>
+
+      <div class="col-md-4" >
+        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1" style="margin:25px 0px 0px 100px">
+          <a href='{{url_for('disconnect')}}'><button type='button' "     " class="btn btn-success btn-sm">Logout</button></a>
+        </div>
+      </div>
+    </div>
+    <hr></hr>
+
+    {% for i in categories %}
+    <div class="category text-center col-md-3">
+      <h3>{{i.category}}</h3>
+      <hr></hr>
+      {% for j in items %}
+      {% if j.category == i.category %}
+      <div class='nameAndPrice'>
+        <span><h4>{{j.name}}</h4></span>
+        <span><p>${{j.price}}</p></span>
+      </div>
+
+      <div class='description'>
+        <p>{{j.description}}</p>
+      </div>
+
+      <div class='editDeletePane'>
+        <a href='{{url_for('editMenuItem', category=i.category, item_id=j.id)}}'><button type="button" class="btn btn-info btn-sm">Edit</button></a>
+        <a href='{{url_for('deleteMenuItem', category=i.category, item_id=j.id)}}'><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+      </div>
+      <hr></hr>
+      {% endif %}
+      {% endfor %}
+      <a href='{{url_for('newMenuItem', category=i.category)}}'><button type="button" class="btn btn-warning btn-sm">Add Item</button></a>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

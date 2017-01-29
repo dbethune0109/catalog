@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Just Desserts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        <h1 class="text-center"> New Menu Item </h1>
+        <hr>
+        <form role="form" action="{{url_for('newMenuItem', category=category)}}" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type='text' class="form-control" size='30' name='name'>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" name='description' row='5' color='40'></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type= 'text' class="form-control" size='8' name='price'>
+        </div>
+        <div class="form-group">
+            <input type='submit' class="btn btn-success btn-lg btn-block" value='Create'>
+        </div>
+        </form>
+            <a href="{{url_for('menu')}}"><button type="button" class="btn btn-default btn-lg btn-block"> Cancel </button></a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</body>
+</html>

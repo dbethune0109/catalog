@@ -346,10 +346,11 @@ def newMenuItem(category):
 
 @app.route(
     '/menu/<string:category>/<int:item_id>/edit/', methods=['GET', 'POST'])
+
 def editMenuItem(category, item_id):
     #  Prompt the user to login
     if 'username' not in login_session:
-        return redirect('/login')
+        return redirect('/publicmenu')
     # Edit menu item in this category type
     # if editedItem.user_id != login_session['user_id']:
     #     return("<script>function myFunction(){alert('You are not authorized "
@@ -357,6 +358,9 @@ def editMenuItem(category, item_id):
     #            "order to edit.'); window.location = '/menu'}"
     #            "</script>body onload='myFunction()'>")
     editedItem = session.query(MenuItem).filter_by(id=item_id).one()
+    if editedItem.user_id != login_session['user_id']:
+        flash("Please login as the creator of the item to delete!")
+        return redirect('/login')
     if request.method == 'POST':
         if request.form['name']:
             editedItem.name = request.form['name']

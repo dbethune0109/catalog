@@ -1,10 +1,9 @@
 ## Full Stack Nanodegree project 3
 
-11-08-2015  
-Lei Zhang
-
+01-25-17
+David Bethune
 ### Project description:
-This project is a basic CURD application for a restaurant menu implemented with python Flask framework, and with base code provided by Uacity. In the project the use can view all the menu items for the fictional Yatta Teriyaki resturant at the root page without logging in.  If the user logs in with Facebook or GooglePlus account, the user will be able to delete, edit, and create new menu item for the restaurant.
+This project is a basic CURD application for a restaurant menu implemented with python Flask framework, and with base code provided by Uacity. In the project the use can view all the menu items for the fictional Just Desserts resturant at the root page without logging in.  If the user logs in with Facebook or GooglePlus account, the user will be able to delete, edit, and create new menu item for the restaurant.
 
 ## To run the project:
 1. Install Vagrant and VirtualBox.
@@ -13,7 +12,7 @@ This project is a basic CURD application for a restaurant menu implemented with 
 4. Enter python database_setup.py then hit enter.
 5. Enter python dummydata.py to create menuwithusers DATABASE with dummy data.
 6. Enter python finalProject.py then hit enter.
-7. Launch web browser then visit http://localhost:5000 to see Yatta Teriyaki menu page.
+7. Launch web browser then visit http://localhost:5000 to see Just Desserts menu page.
 8. Click on login to launch the login page with Facebook or GooglePlus.
 9. Login with a Facebook or GooglePlus accont.
 10. After login the user can edit, delete, or create new item.

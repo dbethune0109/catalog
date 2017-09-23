@@ -44,6 +44,6 @@ class MenuItem(Base):
             'user_id': self.user_id
         }
 
-engine = create_engine('sqlite:///menuwithuser.db')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 
 Base.metadata.create_all(engine)

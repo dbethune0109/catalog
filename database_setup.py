@@ -44,6 +44,6 @@ class MenuItem(Base):
             'user_id': self.user_id
         }
 
-python engine = create_engine('postgresql://catalog:PW-FOR-DB@localhost/catalog')
+python engine = create_engine('postgresql://catalog:MyPassword@localhost/catalog')
 
 Base.metadata.create_all(engine)
